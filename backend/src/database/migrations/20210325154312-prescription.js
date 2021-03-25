@@ -23,6 +23,10 @@ module.exports = {
         allowNull: false
       },
 
+      prescription_date: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
 
       created_at: {
         type: Sequelize.DATE,
