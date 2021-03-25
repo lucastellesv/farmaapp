@@ -9,9 +9,9 @@ module.exports = {
     },
 
     async create(request, response) {
-        const {name, email, cpf, cnpj, password} = request.body;
+        const {name, email, cnpj, password} = request.body;
 
-        const userExist = await User.findOne({where:{cpf, email}}) 
+        const userExist = await User.findOne({where:{cnpj, email}}) 
         if(userExist) {
             return response.status(400).json({message: "User already registred!"});
         }
@@ -21,7 +21,6 @@ module.exports = {
         const user = await User.create({
             name,
             password: hashedPassword,
-            cpf,
             cnpj,
             email
         });
