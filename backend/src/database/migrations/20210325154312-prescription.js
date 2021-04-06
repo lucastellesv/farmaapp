@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('clients', { 
+    await queryInterface.createTable('prescriptions', { 
       id:{ 
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -10,13 +10,14 @@ module.exports = {
         allowNull: false,
       },
 
-      client_id:{
+      costumer_id:{
        type: Sequelize.INTEGER,
        allowNull: false,
        refereces: {model: 'clients', key: 'id'},
        onUpdate:'CASCADE',
        onDelete:'SET NULL'
       },
+      
 
       doctor_crm:{
         type: Sequelize.INTEGER,

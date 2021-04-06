@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('clients', { 
+    await queryInterface.createTable('costumer', { 
       id:{ 
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -10,22 +10,22 @@ module.exports = {
         allowNull: false,
       },
 
-      client_name:{
+      costumer_name:{
         type: Sequelize.STRING,
         allowNull: false,
       },
 
-      client_cpf:{
+      costumer_cpf:{
         type: Sequelize.BIGINT(11),
         allowNull: false,
       },
       
-      client_street:{
+      costumer_street:{
         type: Sequelize.STRING,
         allowNull: false
       },
 
-      client_zipcode:{
+      costumer_zipcode:{
         type: Sequelize.STRING,
         allowNull: false
       },
